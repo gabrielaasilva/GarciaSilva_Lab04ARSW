@@ -29,9 +29,7 @@ public class Blueprint {
 
     public Blueprint() {
     }    
-    public void setPoints(List<Point> p){
-        this.points = p;
-    }
+
     public String getName() {
         return name;
     }
@@ -50,7 +48,11 @@ public class Blueprint {
 
     @Override
     public String toString() {
-        return "Blueprint{" + "author=" + author + ", name=" + name + '}';
+        return "Blueprint{" +
+                "author='" + author + '\'' +
+                ", points=" + points +
+                ", name='" + name + '\'' +
+                '}';
     }
 
     @Override
@@ -89,6 +91,32 @@ public class Blueprint {
         }
         
         return true;
+    }
+    public String getPointsString() {
+        String resultados = "";
+        int cont = points.size();
+        for (int i = 0; i < points.size(); i++) {
+            int posX = points.get(i).getX();
+            int posY = points.get(i).getY();
+            if (i == (points.size() - 1)) {
+                resultados += ("("+posX+", "+posY+")"+"");
+            } else {
+                resultados += ("("+posX+", "+posY+")"+" - ");
+            }
+        }
+        return resultados;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public void setPoints(List<Point> points) {
+        this.points = points;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
     
     

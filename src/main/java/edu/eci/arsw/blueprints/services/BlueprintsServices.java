@@ -10,6 +10,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
@@ -17,15 +18,15 @@ import org.springframework.stereotype.Service;
  *
  * @author hcadavid
  */
-@Service
+@Service("blueprintsServices")
 public class BlueprintsServices {
-    
     @Autowired
-    BlueprintsPersistence bpp;
+    @Qualifier("inMemoryPersistence")
+    BlueprintsPersistence bpp = null ;
     
-     public BlueprintsServices(){
+     /*public BlueprintsServices(){
         bpp = new InMemoryBlueprintPersistence();
-    }
+    }*/
     
 
     public void addNewBlueprint(Blueprint bp){
@@ -74,5 +75,13 @@ public class BlueprintsServices {
             e.printStackTrace();
         }
         return null;
+    }
+    public void deleteBlueprint(String author , String name ){
+        try{
+            bpp.deleteBlueprint(author, name );
+        }catch(Exception e ){
+            e.printStackTrace();
+
+        }
     }
 }

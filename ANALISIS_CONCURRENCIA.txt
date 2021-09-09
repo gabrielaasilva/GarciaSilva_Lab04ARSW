@@ -1,0 +1,9 @@
+¿Qué condiciones de carrera se podrían presentar?
+
+Las condiciones que se pueden presentar es que la informacion al ser consultada
+simultaneamente por varios usuarios y se presenten cambios, uno de ellos obtenga
+la informacion antigua.
+
+¿Cuales son las respectivas regiones críticas?
+
+El proceso de actualizar deberia de tener prioridad sobre el proceso de obtener
