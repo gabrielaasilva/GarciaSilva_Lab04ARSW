@@ -10,7 +10,6 @@
 
 2. Modifique el bean de persistecia 'InMemoryBlueprintPersistence' para que por defecto se inicialice con al menos otros tres planos, y con dos asociados a un mismo autor.
 
-![]()
 
 3. Configure su aplicación para que ofrezca el recurso "/blueprints", de manera que cuando se le haga una petición GET, retorne -en formato jSON- el conjunto de todos los planos. Para esto:
 
@@ -44,13 +43,17 @@
 	
 	```
 	Y luego enviando una petición GET a: http://localhost:8080/blueprints. Rectifique que, como respuesta, se obtenga un objeto jSON con una lista que contenga el detalle de los planos suministados por defecto, y que se haya aplicado el filtrado de puntos correspondiente.
+	
+![](https://github.com/gabrielaasilva/GarciaSilva_Lab04ARSW/blob/master/Images/parte%201-4.png)
 
 
 5. Modifique el controlador para que ahora, acepte peticiones GET al recurso /blueprints/{author}, el cual retorne usando una representación jSON todos los planos realizados por el autor cuyo nombre sea {author}. Si no existe dicho autor, se debe responder con el código de error HTTP 404. Para esto, revise en [la documentación de Spring](http://docs.spring.io/spring/docs/current/spring-framework-reference/html/mvc.html), sección 22.3.2, el uso de @PathVariable. De nuevo, verifique que al hacer una petición GET -por ejemplo- a recurso http://localhost:8080/blueprints/juan, se obtenga en formato jSON el conjunto de planos asociados al autor 'juan' (ajuste esto a los nombres de autor usados en el punto 2).
 
+![](https://github.com/gabrielaasilva/GarciaSilva_Lab04ARSW/blob/master/Images/parte%201-5.png)
+
 6. Modifique el controlador para que ahora, acepte peticiones GET al recurso /blueprints/{author}/{bpname}, el cual retorne usando una representación jSON sólo UN plano, en este caso el realizado por {author} y cuyo nombre sea {bpname}. De nuevo, si no existe dicho autor, se debe responder con el código de error HTTP 404. 
 
-
+![](https://github.com/gabrielaasilva/GarciaSilva_Lab04ARSW/blob/master/Images/parte%201-6.png)
 
 ### Parte II
 
@@ -82,7 +85,7 @@
 	$ curl -i -X POST -HContent-Type:application/json -HAccept:application/json http://URL_del_recurso_ordenes -d '{ObjetoJSON}'
 	```
 
-![]()
+![](https://github.com/gabrielaasilva/GarciaSilva_Lab04ARSW/blob/master/Images/Created.png)
 ![]()	
 
 	Con lo anterior, registre un nuevo plano (para 'diseñar' un objeto jSON, puede usar [esta herramienta](http://www.jsoneditoronline.org/)):
@@ -95,8 +98,8 @@
 
 4. Agregue soporte al verbo PUT para los recursos de la forma '/blueprints/{author}/{bpname}', de manera que sea posible actualizar un plano determinado.
 
-![]()
-![]()
+![](https://github.com/gabrielaasilva/GarciaSilva_Lab04ARSW/blob/master/Images/200ok.png)
+![](https://github.com/gabrielaasilva/GarciaSilva_Lab04ARSW/blob/master/Images/Put-Actualizado.png)
 
 
 ### Parte III
