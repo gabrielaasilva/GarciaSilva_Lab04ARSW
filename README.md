@@ -86,7 +86,7 @@
 	```
 
 ![](https://github.com/gabrielaasilva/GarciaSilva_Lab04ARSW/blob/master/Images/Created.png)
-![]()	
+![](https://github.com/gabrielaasilva/GarciaSilva_Lab04ARSW/blob/master/Images/Created%202.png)	
 
 	Con lo anterior, registre un nuevo plano (para 'diseñar' un objeto jSON, puede usar [esta herramienta](http://www.jsoneditoronline.org/)):
 	
